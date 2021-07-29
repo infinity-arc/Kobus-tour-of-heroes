@@ -27,12 +27,14 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node_version }}
-        with:
+        with: 
           repository: ${{ github.repository }}
           token: ${{github.token}}
           path: $GITHUB_WORKSPACE
-          ses: actions/setup-node@v1
+      
+      - name: Use Node.js ${{ matrix.node_version }}
+        uses: actions/setup-node@v1
+        with:
           node-version: ${{ matrix.node_version }}
 
       # Runs a single command using the runners shell
