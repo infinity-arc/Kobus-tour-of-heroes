@@ -36,7 +36,7 @@ jobs:
         run: |
           npm install
           npm run build --if-present
-          npm test
+          ng test --code-coverage --watch=false --browsers ChromeHeadless
           npm run lint
           npm run e2e      
     
@@ -45,6 +45,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
