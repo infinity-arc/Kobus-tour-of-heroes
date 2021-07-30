@@ -4,6 +4,8 @@ import { Hero } from './hero';
 import { HEROES } from './mock-heroes';
 import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { catchError, map, tap } from '@angular/compiler/src/output/output_ast';
+
 
 @Injectable({ providedIn: 'root' })
 export class HeroService {
@@ -12,6 +14,7 @@ export class HeroService {
     private messageService: MessageService,
     private http: HttpClient,
   ) { }
+  private heroesUrl = 'api/heroes';
 
   private log(message: string) {
     this.messageService.add(`HeroService: ${message}`);
@@ -20,7 +23,10 @@ export class HeroService {
   getHeroes(): Observable<Hero[]> {
     const heroes = of(HEROES);
     this.messageService.add('HeroService: fetched heroes');
-    return heroes;
+    return this.http.get<Hero[]>(this.heroesUrl)
+      .pipe(
+        catchError(this.handleError<Hero[]>(' getHeroes', []))
+      );
   }
 
   getHero(id: number): Observable<Hero> {
