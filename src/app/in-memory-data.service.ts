@@ -10,17 +10,17 @@ export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const heroes = [
       { id: 11, name: 'Dr Zef' },
-      { id: 12, name: 'Captain Mountain Dew' },
+      { id: 12, name: 'Cpt Mountain Dew' },
       { id: 13, name: 'Dr DocX' },
       { id: 14, name: 'MassiveClint' },
       { id: 15, name: 'Mr Angular' },
       { id: 16, name: 'Pickle Rick' },
       { id: 17, name: 'Jetman JPEG' },
       { id: 18, name: 'Backpack man' },
-      { id: 19, name: 'Poke-a-coconut guy' },
+      { id: 19, name: 'Coconut guy' },
       { id: 20, name: 'See Eend Brah' },
     ];
-    return (heroes);
+    return { heroes };
   }
 
   genId(heroes: Hero[]): number {
