@@ -1,7 +1,6 @@
-# Kobus Learns Angular and DevOps
+# Learn Angular and DevOps
 
 [![CI Pipeline](https://github.com/infinity-arc/Kobus-tour-of-heroes/actions/workflows/main.yml/badge.svg)](https://github.com/infinity-arc/Kobus-tour-of-heroes/actions/workflows/main.yml)
-
 [![CodeQL](https://github.com/infinity-arc/Kobus-tour-of-heroes/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/infinity-arc/Kobus-tour-of-heroes/actions/workflows/codeql-analysis.yml)
 
 ---
