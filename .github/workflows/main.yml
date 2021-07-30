@@ -44,6 +44,7 @@ jobs:
         run: |
           npm install
           npm run build --if-present
+          npm test:ci
           # ng test --code-coverage --watch=false --browsers ChromeHeadless
           # npm run lint
           # npm run e2e      
