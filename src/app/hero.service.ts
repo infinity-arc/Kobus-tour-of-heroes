@@ -31,7 +31,7 @@ export class HeroService {
     const url = `${this.heroesUrl}/?id=${id}`;
     return this.http.get<Hero[]>(url)
       .pipe(
-        map(heroes => heroes[0]),
+        map((heroes) => heroes[0]),
         tap(h => {
           const outcome = h ? `fetched` : `did not find`;
           this.log(`${outcome} hero id=${id}`);
